@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="MUITheme.NoActionBar">
+
+        <item name="mui_dialog_action_container_style">@style/MGMUIDialogActionContainerDefStyle</item>
+        <item name="mui_dialog_action_view_style">@style/MGMUIDialogActionViewDefStyle</item>
+
+    </style>
+
+
+
+
+
+
+
+    <!--Dialog action container style-->
+    <style name="MGMUIDialogActionContainerDefStyle">
+        <item name="android:paddingLeft">@dimen/dp_12</item>
+        <item name="android:paddingRight">@dimen/dp_12</item>
+        <item name="android:paddingTop">@dimen/dp_0</item>
+        <item name="android:paddingBottom">@dimen/dp_12</item>
+        <item name="mui_dialog_action_container_justify_content">stretch</item>
+        <item name="mui_dialog_action_height">@dimen/dp_36</item>
+        <item name="mui_dialog_action_space">@dimen/dp_8</item>
+    </style>
+    <!--Dialog action view style-->
+    <style name="MGMUIDialogActionViewDefStyle">
+        <item name="android:textColor">@color/mui_config_color_blue</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">@dimen/dp_64</item>
+        <item name="mui_dialog_action_button_padding_horizontal">@dimen/dp_12</item>
+        <item name="mui_dialog_action_icon_space">@dimen/dp_6</item>
+        <item name="mui_dialog_positive_action_text_color">@color/mui_config_color_blue</item>
+        <item name="mui_dialog_negative_action_text_color">@color/mui_config_color_red</item>
+    </style>
+
+</resources>

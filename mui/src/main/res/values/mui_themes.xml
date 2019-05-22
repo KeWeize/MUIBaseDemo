@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 关于Theme的继承关系：
+    由于 Theme 需要在不同 API Level 下有不同的配置，并且继承自不同的系统 Theme，所以多层继承。
+
+    继承关系和每个层的分工如下：
+	AppRootTheme（Theme 的最顶层，各个 API Level 自行决定继承自系统的哪个 Theme）
+	  |-values
+	  |-values-v21
+	  |-values-...
+	  |
+	AppBaseTheme（基础 Theme，定义所有公用的 style。）
+	  |-values
+	  |
+	AppConfigTheme（可配置的 Theme，各个 API Level 自行配置各自的 style 差异。）
+	  |-values
+	  |-values-v21
+	  |-values-...
+	  |
+	QMUI（QMUI提供的theme控制， 供外界使用）
+
+	So，
+	如果要对某 API Level 配置继承自某个系统的 Theme，在 values-v* 目录下修改 qmui_themes.xml 的 AppRootTheme。
+	如果要对某 API Level 配置定制化的 Theme，在 values-v* 目录下修改 qmui_themes.xml 的 AppConfigTheme。
+	如果在项目中要对特定项目配置业务相关的 Theme，在 values 目录下修改 themes.xml 的 AppTheme。
+     -->
+    <style name="AppRootTheme" parent="Theme.AppCompat.Light" />
+
+    <style name="AppBaseTheme" parent="AppRootTheme">
+        <item name="android:listDivider">@drawable/mui_divider</item>
+        <item name="android:listViewStyle">@style/ListView.Compat</item>
+        <item name="android:gridViewStyle">@style/GridView.Compat</item>
+        <item name="android:imageButtonStyle">@style/ImageButton.Compat</item>
+        <item name="android:buttonStyle">@style/Button.Compat</item>
+        <item name="android:editTextStyle">@style/EditText.Compat</item>
+        <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextView.Compat</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Compat</item>
+        <item name="android:textViewStyle">@style/TextView.Compat</item>
+
+        <item name="imageButtonStyle">@style/ImageButton.Compat</item>
+        <item name="buttonStyle">@style/Button.Compat</item>
+        <item name="editTextStyle">@style/EditText.Compat</item>
+        <item name="autoCompleteTextViewStyle">@style/AutoCompleteTextView.Compat</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Compat</item>
+    </style>
+
+    <style name="AppConfigTheme" parent="AppBaseTheme">
+        <item name="colorPrimary">@color/mui_config_color_blue</item>
+        <item name="colorPrimaryDark">@color/mui_config_color_blue</item>
+        <item name="colorAccent">@color/mui_config_color_blue</item>
+        <item name="colorControlNormal">@color/mui_config_color_white</item>
+        <item name="android:textColorPrimary">@color/mui_config_color_blue</item>
+        <item name="android:textColorSecondary">@color/mui_config_color_blue</item>
+        <item name="android:windowBackground">@color/mui_config_color_white</item>
+        <item name="android:editTextColor">@color/mui_config_color_black</item>
+    </style>
+
+    <style name="MUITheme" parent="AppConfigTheme">
+        <!--some config in MUI-->
+        <!--base config-->
+        <item name="mui_config_color_gray_1">@color/mui_config_color_gray_1</item>
+        <item name="mui_config_color_gray_2">@color/mui_config_color_gray_2</item>
+        <item name="mui_config_color_gray_3">@color/mui_config_color_gray_3</item>
+        <item name="mui_config_color_gray_4">@color/mui_config_color_gray_4</item>
+        <item name="mui_config_color_gray_5">@color/mui_config_color_gray_5</item>
+        <item name="mui_config_color_gray_6">@color/mui_config_color_gray_6</item>
+        <item name="mui_config_color_gray_7">@color/mui_config_color_gray_7</item>
+        <item name="mui_config_color_gray_8">@color/mui_config_color_gray_8</item>
+        <item name="mui_config_color_gray_9">@color/mui_config_color_gray_9</item>
+
+        <!--drawable-->
+        <item name="mui_s_checkbox">@drawable/mui_s_checkbox</item>
+
+        <!--alpha-->
+        <item name="mui_alpha_pressed">0.6</item>
+        <item name="mui_alpha_disabled">0.6</item>
+        <!--layout-->
+        <item name="mui_general_shadow_elevation">14dp</item>
+        <item name="mui_general_shadow_alpha">0.25</item>
+        <!--topbar-->
+        <item name="mui_topbar_height">@dimen/dp_48</item>
+        <item name="MUITopBarStyle">@style/MUITopBarDefStyle</item>
+        <!--dialog-->
+        <item name="mui_dialog_min_width">@dimen/dp_260</item>
+        <item name="mui_dialog_max_width">@dimen/dp_304</item>
+        <item name="mui_dialog_bg">@drawable/mui_dialog_bg</item>
+        <item name="mui_dialog_radius">@dimen/mui_dialog_radius</item>
+        <item name="mui_dialog_margin_vertical">@dimen/dp_20</item>
+        <item name="mui_dialog_padding_horizontal">@dimen/dp_24</item>
+        <item name="mui_dialog_background_dim_amount">0.6</item>
+
+        <item name="mui_dialog_title_style">@style/MUI.Dialog.TitleDefStyle</item>
+        <item name="mui_dialog_message_content_style">@style/MUI.Dialog.MessageContentDefStyle</item>
+        <item name="mui_dialog_action_container_style">@style/MUI.Dialog.ActionContainerDefStyle</item>
+        <item name="mui_dialog_action_view_style">@style/MUI.Dialog.ActionViewDefStyle</item>
+
+    </style>
+
+    <style name="MUITheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ListViewBase.Compat" parent="@style/Widget.AppCompat.ListView" />
+
+    <style name="GridViewBase.Compat" parent="android:Widget.GridView" />
+
+    <style name="ImageButtonBase.Compat" parent="@style/Widget.AppCompat.ImageButton" />
+
+    <style name="ButtonBase.Compat" parent="@style/Widget.AppCompat.Button">
+        <!-- 取消 Button 字符默认大写的功能（会导致 Spannable 失效），默认值只影响 5.0 以上版本，但使用Compat包后，4.x 版本也会受到影响 -->
+        <!-- http://stackoverflow.com/questions/29007746/button-settext-with-spannable-dosent-work-for-android-5-0-lollipop -->
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="EditTextBase.Compat" parent="@style/Widget.AppCompat.EditText" />
+
+    <style name="AutoCompleteTextViewBase.Compat" parent="@style/Widget.AppCompat.AutoCompleteTextView" />
+
+    <style name="DropDownListViewBase.Compat" parent="@style/Widget.AppCompat.ListView.DropDown" />
+
+    <style name="TextAppearanceBase" parent="android:TextAppearance" />
+
+    <!-- ListView -->
+    <style name="ListView.Compat" parent="ListViewBase.Compat">
+        <item name="android:background">@color/mui_config_color_transparent</item>
+        <item name="android:listSelector">@color/mui_config_color_transparent</item>
+        <item name="android:divider">@drawable/mui_divider_bottom_bitmap</item>
+        <item name="android:dividerHeight">@dimen/mui_list_divider_height</item>
+    </style>
+
+    <!-- GridView -->
+    <style name="GridView.Compat" parent="GridViewBase.Compat">
+        <item name="android:background">@color/mui_config_color_transparent</item>
+        <item name="android:listSelector">@color/mui_config_color_transparent</item>
+    </style>
+
+    <!--ImageButton-->
+    <style name="ImageButton.Compat" parent="ImageButtonBase.Compat">
+        <item name="android:background">@color/mui_config_color_transparent</item>
+    </style>
+
+    <style name="Button.Compat" parent="ButtonBase.Compat" />
+
+    <style name="EditText.Compat" parent="EditTextBase.Compat">
+        <item name="android:textColor">?attr/mui_config_color_gray_1</item>
+        <item name="android:textColorHint">?attr/mui_config_color_gray_4</item>
+        <!-- 光标颜色与textColor一致，若要自定义，应该用ShapeDrawable，不能简单指定一个color -->
+        <item name="android:textCursorDrawable">@null</item>
+
+    </style>
+
+    <style name="TextView.Compat" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/MUITextAppearance</item>
+        <!-- textColorHighlight 放在appearance中无效，好像TextView总是默认存在一个textColorHighlight
+             会覆盖掉它，并不知道原因 -->
+        <item name="android:textColorHighlight">@color/mui_config_color_background_pressed</item>
+    </style>
+
+    <style name="AutoCompleteTextView.Compat" parent="AutoCompleteTextViewBase.Compat">
+        <item name="android:textColor">?attr/mui_config_color_gray_1</item>
+        <item name="android:textColorHint">?attr/mui_config_color_gray_4</item>
+        <!-- 光标颜色与textColor一致，若要自定义，应该用ShapeDrawable，不能简单指定一个color -->
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+    <!-- 下拉列表，例如AutoCompleteTextView的补全列表 -->
+    <style name="DropDownListView.Compat" parent="DropDownListViewBase.Compat">
+        <item name="android:divider">@drawable/mui_divider_bottom_bitmap</item>
+        <item name="android:dividerHeight">@dimen/mui_list_divider_height</item>
+        <item name="android:background">@color/mui_config_color_white</item>
+    </style>
+
+</resources>

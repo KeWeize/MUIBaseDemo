@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <vit.com.mui.widget.topbar.MUITopBar
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                app:mui_topbar_bg_color="@color/mui_config_color_white"
+                app:mui_topbar_need_separator="true" />
+
+            <vit.com.mui.widget.roundwidget.MUIRoundLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_5"
+                app:mui_backgroundColor="#FFFFFF">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_18"
+                    android:layout_height="@dimen/dp_18"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:background="#456563" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:padding="@dimen/dp_5"
+                    android:hint="请输入要查找的商品"
+                    android:textSize="@dimen/sp_12" />
+
+            </vit.com.mui.widget.roundwidget.MUIRoundLinearLayout>
+
+            <vit.com.mui.widget.roundwidget.MUIRoundButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_25"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="#FFFFFF"
+                app:mui_backgroundColor="#A45626"
+                app:mui_borderColor="@color/mui_config_color_pure_black"
+                app:mui_borderWidth="@dimen/dp_5"
+                app:mui_radiusBottomLeft="@dimen/dp_15"
+                app:mui_radiusBottomRight="@dimen/dp_5"
+                app:mui_radiusTopLeft="@dimen/dp_15"
+                app:mui_radiusTopRight="@dimen/dp_5" />
+
+            <vit.com.mui.layout.MUIRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="#FFFFFF"
+                android:padding="15dp"
+                app:mui_borderColor="#000000"
+                app:mui_borderWidth="1dp"
+                app:mui_bottomDividerColor="#000000"
+                app:mui_bottomDividerHeight="1dp"
+                app:mui_hideRadiusSide="left"
+                app:mui_radius="15dp"
+                app:mui_shadowAlpha="0.5"
+                app:mui_shadowElevation="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="i am MUIFrameLayout" />
+
+            </vit.com.mui.layout.MUIRelativeLayout>
+
+            <vit.com.mui.layout.MUIFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="#FFFFFF"
+                android:padding="15dp"
+                app:mui_borderWidth="1dp"
+                app:mui_bottomDividerColor="#000000"
+                app:mui_bottomDividerHeight="1dp"
+                app:mui_radius="15dp"
+                app:mui_shadowAlpha="0.5"
+                app:mui_shadowElevation="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="i am MUIFrameLayout" />
+
+            </vit.com.mui.layout.MUIFrameLayout>
+
+            <vit.com.mui.layout.MUILinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="#FFFFFF"
+                android:padding="15dp"
+                app:mui_borderWidth="1dp"
+                app:mui_bottomDividerColor="#000000"
+                app:mui_bottomDividerHeight="1dp"
+                app:mui_radius="15dp"
+                app:mui_shadowAlpha="0.5"
+                app:mui_shadowElevation="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="i am MUILinearLayout" />
+
+            </vit.com.mui.layout.MUILinearLayout>
+
+
+            <vit.com.mui.alpha.MUIAlphaRelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="i am AlphaRelativeLayout" />
+
+            </vit.com.mui.alpha.MUIAlphaRelativeLayout>
+
+            <vit.com.mui.alpha.MUIAlphaLinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="i am AlphaLinearLayout" />
+
+            </vit.com.mui.alpha.MUIAlphaLinearLayout>
+
+            <vit.com.mui.alpha.MUIAlphaFrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="i am AlphaFramenLayout" />
+
+            </vit.com.mui.alpha.MUIAlphaFrameLayout>
+
+            <vit.com.mui.alpha.MUIAlphaButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="i am alpha button" />
+
+            <vit.com.mui.alpha.MUIAlphaTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="i am Alpha TextView" />
+
+            <vit.com.mui.alpha.MUIAlphaTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="i am Alpha TextView" />
+
+            <vit.com.mui.alpha.MUIAlphaImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_idcard" />
+
+            <vit.com.mui.alpha.MUIAlphaImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:src="@drawable/ic_idcard" />
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

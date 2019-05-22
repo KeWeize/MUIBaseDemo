@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--layout comm attr-->
+    <!--圆角-->
+    <attr name="mui_radius" format="dimension"/>
+    <attr name="mui_hideRadiusSide" format="enum">
+        <enum name="none" value="0" />
+        <enum name="top" value="1" />
+        <enum name="right" value="2" />
+        <enum name="bottom" value="3" />
+        <enum name="left" value="4" />
+    </attr>
+    <!--底部分割线-->
+    <attr name="mui_bottomDividerHeight" format="dimension" />
+    <attr name="mui_bottomDividerColor" format="color|reference" />
+    <attr name="mui_bottomDividerInsetLeft" format="dimension" />
+    <attr name="mui_bottomDividerInsetRight" format="dimension" />
+    <!--顶部分割线-->
+    <attr name="mui_topDividerHeight" format="dimension" />
+    <attr name="mui_topDividerColor" format="color|reference" />
+    <attr name="mui_topDividerInsetLeft" format="dimension" />
+    <attr name="mui_topDividerInsetRight" format="dimension" />
+    <!--左边分割线-->
+    <attr name="mui_leftDividerWidth" format="dimension" />
+    <attr name="mui_leftDividerColor" format="color|reference" />
+    <attr name="mui_leftDividerInsetTop" format="dimension" />
+    <attr name="mui_leftDividerInsetBottom" format="dimension" />
+    <!--右边分割线-->
+    <attr name="mui_rightDividerWidth" format="dimension" />
+    <attr name="mui_rightDividerColor" format="color|reference" />
+    <attr name="mui_rightDividerInsetTop" format="dimension" />
+    <attr name="mui_rightDividerInsetBottom" format="dimension" />
+    <!--边线-->
+    <attr name="mui_borderColor" format="color"/>
+    <attr name="mui_borderWidth" format="dimension"/>
+    <attr name="mui_outerNormalColor" format="color|reference" />
+    <!--阴影-->
+    <attr name="mui_showBorderOnlyBeforeL" format="boolean" />
+    <attr name="mui_shadowElevation" format="dimension" />
+    <attr name="mui_useThemeGeneralShadowElevation" format="boolean" />
+    <attr name="mui_shadowAlpha" format="float" />
+    <attr name="mui_outlineInsetTop" format="dimension" />
+    <attr name="mui_outlineInsetLeft" format="dimension" />
+    <attr name="mui_outlineInsetRight" format="dimension" />
+    <attr name="mui_outlineInsetBottom" format="dimension" />
+    <attr name="mui_outlineExcludePadding" format="boolean" />
+
+    <!--round widget comm attr-->
+    <attr name="mui_backgroundColor" format="color" />
+    <attr name="mui_radiusTopLeft" format="dimension" />
+    <attr name="mui_radiusTopRight" format="dimension" />
+    <attr name="mui_radiusBottomLeft" format="dimension" />
+    <attr name="mui_radiusBottomRight" format="dimension" />
+    <attr name="mui_isRadiusAdjustBounds" format="boolean" />
+
+    <!--TextView Comm Attrs-->
+    <declare-styleable name="MUITextViewCommAttr">
+        <attr name="android:textColor"/>
+        <attr name="android:textSize"/>
+        <attr name="android:background"/>
+        <attr name="android:gravity"/>
+        <attr name="android:paddingTop"/>
+        <attr name="android:paddingLeft"/>
+        <attr name="android:paddingRight"/>
+        <attr name="android:paddingBottom"/>
+        <attr name="android:singleLine"/>
+        <attr name="android:ellipsize"/>
+        <attr name="android:maxLines"/>
+        <attr name="android:lineSpacingExtra"/>
+        <attr name="android:drawablePadding"/>
+        <attr name="android:textColorHint"/>
+        <attr name="android:textStyle"/>
+    </declare-styleable>
+    
+    <!--layout : Linearlayout-->
+    <declare-styleable name="MUILinearLayout">
+        <attr name="android:maxWidth" />
+        <attr name="android:maxHeight" />
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+        <attr name="mui_bottomDividerHeight" />
+        <attr name="mui_bottomDividerColor" />
+        <attr name="mui_bottomDividerInsetLeft" />
+        <attr name="mui_bottomDividerInsetRight" />
+        <attr name="mui_topDividerHeight" />
+        <attr name="mui_topDividerColor" />
+        <attr name="mui_topDividerInsetLeft" />
+        <attr name="mui_topDividerInsetRight" />
+        <attr name="mui_leftDividerWidth" />
+        <attr name="mui_leftDividerColor" />
+        <attr name="mui_leftDividerInsetTop" />
+        <attr name="mui_leftDividerInsetBottom" />
+        <attr name="mui_rightDividerWidth" />
+        <attr name="mui_rightDividerColor" />
+        <attr name="mui_rightDividerInsetTop" />
+        <attr name="mui_rightDividerInsetBottom" />
+        <attr name="mui_radius" />
+        <attr name="mui_borderColor" />
+        <attr name="mui_borderWidth" />
+        <attr name="mui_outerNormalColor" />
+        <attr name="mui_hideRadiusSide" />
+        <attr name="mui_showBorderOnlyBeforeL" />
+        <attr name="mui_shadowElevation" />
+        <attr name="mui_useThemeGeneralShadowElevation" />
+        <attr name="mui_shadowAlpha" />
+        <attr name="mui_outlineInsetTop" />
+        <attr name="mui_outlineInsetLeft" />
+        <attr name="mui_outlineInsetRight" />
+        <attr name="mui_outlineInsetBottom" />
+        <attr name="mui_outlineExcludePadding" />
+    </declare-styleable>
+
+    <!--layout Framelayout-->
+    <declare-styleable name="MUIFrameLayout">
+        <attr name="android:maxWidth" />
+        <attr name="android:maxHeight" />
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+        <attr name="mui_bottomDividerHeight" />
+        <attr name="mui_bottomDividerColor" />
+        <attr name="mui_bottomDividerInsetLeft" />
+        <attr name="mui_bottomDividerInsetRight" />
+        <attr name="mui_topDividerHeight" />
+        <attr name="mui_topDividerColor" />
+        <attr name="mui_topDividerInsetLeft" />
+        <attr name="mui_topDividerInsetRight" />
+        <attr name="mui_leftDividerWidth" />
+        <attr name="mui_leftDividerColor" />
+        <attr name="mui_leftDividerInsetTop" />
+        <attr name="mui_leftDividerInsetBottom" />
+        <attr name="mui_rightDividerWidth" />
+        <attr name="mui_rightDividerColor" />
+        <attr name="mui_rightDividerInsetTop" />
+        <attr name="mui_rightDividerInsetBottom" />
+        <attr name="mui_radius" />
+        <attr name="mui_borderColor" />
+        <attr name="mui_borderWidth" />
+        <attr name="mui_outerNormalColor" />
+        <attr name="mui_hideRadiusSide" />
+        <attr name="mui_showBorderOnlyBeforeL" />
+        <attr name="mui_shadowElevation" />
+        <attr name="mui_useThemeGeneralShadowElevation" />
+        <attr name="mui_shadowAlpha" />
+        <attr name="mui_outlineInsetTop" />
+        <attr name="mui_outlineInsetLeft" />
+        <attr name="mui_outlineInsetRight" />
+        <attr name="mui_outlineInsetBottom" />
+        <attr name="mui_outlineExcludePadding" />
+    </declare-styleable>
+
+    <!--layout : RelativeLayout-->
+    <declare-styleable name="MUIRelativeLayout">
+        <attr name="android:maxWidth" />
+        <attr name="android:maxHeight" />
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+        <attr name="mui_bottomDividerHeight" />
+        <attr name="mui_bottomDividerColor" />
+        <attr name="mui_bottomDividerInsetLeft" />
+        <attr name="mui_bottomDividerInsetRight" />
+        <attr name="mui_topDividerHeight" />
+        <attr name="mui_topDividerColor" />
+        <attr name="mui_topDividerInsetLeft" />
+        <attr name="mui_topDividerInsetRight" />
+        <attr name="mui_leftDividerWidth" />
+        <attr name="mui_leftDividerColor" />
+        <attr name="mui_leftDividerInsetTop" />
+        <attr name="mui_leftDividerInsetBottom" />
+        <attr name="mui_rightDividerWidth" />
+        <attr name="mui_rightDividerColor" />
+        <attr name="mui_rightDividerInsetTop" />
+        <attr name="mui_rightDividerInsetBottom" />
+        <attr name="mui_radius" />
+        <attr name="mui_borderColor" />
+        <attr name="mui_borderWidth" />
+        <attr name="mui_outerNormalColor" />
+        <attr name="mui_hideRadiusSide" />
+        <attr name="mui_showBorderOnlyBeforeL" />
+        <attr name="mui_shadowElevation" />
+        <attr name="mui_useThemeGeneralShadowElevation" />
+        <attr name="mui_shadowAlpha" />
+        <attr name="mui_outlineInsetTop" />
+        <attr name="mui_outlineInsetLeft" />
+        <attr name="mui_outlineInsetRight" />
+        <attr name="mui_outlineInsetBottom" />
+        <attr name="mui_outlineExcludePadding" />
+    </declare-styleable>
+
+    <!--layout MUIButton-->
+    <declare-styleable name="MUIButton">
+        <attr name="android:maxWidth" />
+        <attr name="android:maxHeight" />
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+        <attr name="mui_bottomDividerHeight" />
+        <attr name="mui_bottomDividerColor" />
+        <attr name="mui_bottomDividerInsetLeft" />
+        <attr name="mui_bottomDividerInsetRight" />
+        <attr name="mui_topDividerHeight" />
+        <attr name="mui_topDividerColor" />
+        <attr name="mui_topDividerInsetLeft" />
+        <attr name="mui_topDividerInsetRight" />
+        <attr name="mui_leftDividerWidth" />
+        <attr name="mui_leftDividerColor" />
+        <attr name="mui_leftDividerInsetTop" />
+        <attr name="mui_leftDividerInsetBottom" />
+        <attr name="mui_rightDividerWidth" />
+        <attr name="mui_rightDividerColor" />
+        <attr name="mui_rightDividerInsetTop" />
+        <attr name="mui_rightDividerInsetBottom" />
+        <attr name="mui_radius" />
+        <attr name="mui_borderColor" />
+        <attr name="mui_borderWidth" />
+        <attr name="mui_outerNormalColor" />
+        <attr name="mui_hideRadiusSide" />
+        <attr name="mui_showBorderOnlyBeforeL" />
+        <attr name="mui_shadowElevation" />
+        <attr name="mui_useThemeGeneralShadowElevation" />
+        <attr name="mui_shadowAlpha" />
+        <attr name="mui_outlineInsetTop" />
+        <attr name="mui_outlineInsetLeft" />
+        <attr name="mui_outlineInsetRight" />
+        <attr name="mui_outlineInsetBottom" />
+        <attr name="mui_outlineExcludePadding" />
+    </declare-styleable>
+
+</resources>

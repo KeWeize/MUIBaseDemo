@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--MUITopbar-->
+    <declare-styleable name="MUITopBar">
+        <attr name="mui_topbar_title_gravity" format="enum">
+            <enum name="left_center" value="19" />
+            <enum name="center" value="17" />
+        </attr>
+        <attr name="mui_topbar_need_separator" format="boolean" />
+        <attr name="mui_topbar_separator_color" format="color" />
+        <attr name="mui_topbar_separator_height" format="dimension" />
+        <attr name="mui_topbar_bg_color" format="color" />
+        <!--titile-->
+        <attr name="mui_topbar_title_container_padding_hor" format="dimension" />
+        <attr name="mui_topbar_title_text_size" format="dimension" />
+        <attr name="mui_topbar_title_with_subtitle_text_size" format="dimension" />
+        <attr name="mui_topbar_title_text_color" format="color" />
+        <attr name="mui_topbar_subtitle_text_size" format="dimension" />
+        <attr name="mui_topbar_subtitle_text_color" format="color" />
+        <!--side-->
+        <attr name="mui_topbar_left_back_drawable_id" format="reference" />
+        <attr name="mui_topbar_side_container_padding_hor" format="dimension" />
+        <attr name="mui_topbar_side_imagebutton_width" format="dimension" />
+        <attr name="mui_topbar_side_imagebutton_height" format="dimension" />
+        <attr name="mui_topbar_side_imagebutton_padding_hor" format="dimension" />
+        <attr name="mui_topbar_side_imagebutton_margin_hor" format="dimension" />
+        <attr name="mui_topbar_side_textview_text_size" format="dimension" />
+        <attr name="mui_topbar_side_textview_text_color" format="color" />
+        <attr name="mui_topbar_side_textview_padding_hor" format="dimension" />
+    </declare-styleable>
+
+    <!--RoundButton-->
+    <declare-styleable name="MUIRoundButton">
+        <attr name="mui_backgroundColor" />
+        <attr name="mui_borderColor" />
+        <attr name="mui_borderWidth" />
+        <attr name="mui_isRadiusAdjustBounds" />
+        <attr name="mui_radius" />
+        <attr name="mui_radiusTopLeft" />
+        <attr name="mui_radiusTopRight" />
+        <attr name="mui_radiusBottomLeft" />
+        <attr name="mui_radiusBottomRight" />
+    </declare-styleable>
+
+    <!--RoundLinearLayout-->
+    <declare-styleable name="MUIRoundLinearLayout">
+        <attr name="mui_backgroundColor" />
+        <attr name="mui_borderColor" />
+        <attr name="mui_borderWidth" />
+        <attr name="mui_isRadiusAdjustBounds" />
+        <attr name="mui_radius" />
+        <attr name="mui_radiusTopLeft" />
+        <attr name="mui_radiusTopRight" />
+        <attr name="mui_radiusBottomLeft" />
+        <attr name="mui_radiusBottomRight" />
+    </declare-styleable>
+
+
+    <!--##################### DIALOG start ########################-->
+
+    <!--Dialog Title-->
+    <declare-styleable name="MUIDialogTitleTvCustom">
+        <attr name="mui_paddingBottomWhenNotContent" />
+    </declare-styleable>
+
+    <!--Dialog Message-->
+    <declare-styleable name="MUIDialogMessageTvCustom">
+        <attr name="mui_paddingTopWhenNotTitle" />
+    </declare-styleable>
+
+    <!--Dialog Action Container-->
+    <declare-styleable name="MUIDialogActionContainer">
+        <attr name="mui_dialog_action_container_justify_content" format="enum">
+            <enum name="start" value="0" />
+            <enum name="end" value="1" />
+            <enum name="stretch" value="2" />
+            <enum name="custom" value="3" />
+        </attr>
+        <attr name="mui_dialog_action_container_custom_space_index" format="integer" />
+        <attr name="mui_dialog_action_height" format="dimension" />
+        <attr name="mui_dialog_action_space" format="dimension" />
+    </declare-styleable>
+
+    <!--Dialog Action View-->
+    <declare-styleable name="MUIDialogActionView">
+        <attr name="android:textColor" />
+        <attr name="android:textSize" />
+        <attr name="android:background" />
+        <attr name="android:gravity" />
+        <attr name="android:minWidth" />
+        <attr name="android:textStyle" />
+        <attr name="mui_dialog_action_button_padding_horizontal" format="dimension" />
+        <attr name="mui_dialog_action_icon_space" format="dimension" />
+        <attr name="mui_dialog_positive_action_text_color" format="color|reference" />
+        <attr name="mui_dialog_negative_action_text_color" format="color|reference" />
+    </declare-styleable>
+
+</resources>

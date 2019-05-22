@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Dialog View style-->
+    <style name="mui_dialog_wrap">
+        <item name="android:background">?attr/mui_dialog_bg</item>
+        <item name="mui_radius">?attr/mui_dialog_radius</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">?attr/mui_dialog_margin_vertical</item>
+        <item name="android:layout_marginBottom">?attr/mui_dialog_margin_vertical</item>
+    </style>
+
+</resources>

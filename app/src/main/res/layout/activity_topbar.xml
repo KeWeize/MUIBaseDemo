@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--comm-->
+            <vit.com.mui.widget.topbar.MUITopBar
+                android:id="@+id/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mui_topbar_side_container_padding_hor="@dimen/dp_0" />
+
+            <!--Keep 个人中心-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="#FFFFFF"
+                android:padding="@dimen/dp_15"
+                android:text="keep 个人中心" />
+
+            <vit.com.mui.widget.topbar.MUITopBar
+                android:id="@+id/topbar_01"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_49"
+                app:mui_topbar_bg_color="#FFFFFF"
+                app:mui_topbar_need_separator="true"
+                app:mui_topbar_title_container_padding_hor="15dp"
+                app:mui_topbar_title_gravity="left_center"
+                app:mui_topbar_title_text_color="#4a4856"
+                app:mui_topbar_title_text_size="22sp" />
+
+            <!--Keep 体侧列表-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5a4f60"
+                android:padding="@dimen/dp_15"
+                android:text="keep 体侧列表"
+                android:textColor="#FFFFFF" />
+
+            <vit.com.mui.widget.topbar.MUITopBar
+                android:id="@+id/topbar_02"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_49"
+                app:mui_topbar_bg_color="#5a4f60"
+                app:mui_topbar_need_separator="false"
+                app:mui_topbar_side_imagebutton_height="@dimen/dp_35"
+                app:mui_topbar_side_imagebutton_padding_hor="@dimen/dp_5"
+                app:mui_topbar_side_imagebutton_width="@dimen/dp_35"
+                app:mui_topbar_side_textview_text_color="#3abe96"
+                app:mui_topbar_side_textview_text_size="@dimen/sp_13"
+                app:mui_topbar_title_container_padding_hor="5dp"
+                app:mui_topbar_title_gravity="left_center"
+                app:mui_topbar_title_text_color="#FFFFFF"
+                app:mui_topbar_title_text_size="@dimen/sp_18" />
+
+            <!--Keep 动态详情-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="@dimen/dp_15"
+                android:text="keep 动态详情" />
+
+            <vit.com.mui.widget.topbar.MUITopBar
+                android:id="@+id/topbar_03"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_49"
+                app:mui_topbar_bg_color="#FFFFFF"
+                app:mui_topbar_need_separator="true"
+                app:mui_topbar_title_container_padding_hor="15dp"
+                app:mui_topbar_title_gravity="left_center"
+                app:mui_topbar_title_text_color="#4a4856"
+                app:mui_topbar_title_text_size="22sp" />
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>
