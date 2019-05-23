@@ -1,5 +1,6 @@
 package vit.com.muibasedemo;
 
+import android.content.DialogInterface;
 import android.view.View;
 import android.widget.Toast;
 
@@ -25,7 +26,8 @@ public class MUIDialogActivity extends VBaseA {
     protected void initView() {
     }
 
-    @OnClick({R.id.tv_message_dialog, R.id.tv_checkbox_message_dialog})
+    @OnClick({R.id.tv_message_dialog, R.id.tv_checkbox_message_dialog, R.id.tv_edittext_dialog,
+            R.id.tv_simple_menu_dialog})
     public void onViewClick(View v) {
         switch (v.getId()) {
             case R.id.tv_message_dialog:
@@ -34,6 +36,14 @@ public class MUIDialogActivity extends VBaseA {
 
             case R.id.tv_checkbox_message_dialog:
                 showCheckBoxMessageDialog();
+                break;
+
+            case R.id.tv_edittext_dialog:
+                showEditTextDialog();
+                break;
+
+            case R.id.tv_simple_menu_dialog:
+                showSimpleMenuDialog();
                 break;
 
             default:
@@ -62,7 +72,6 @@ public class MUIDialogActivity extends VBaseA {
                         dialog.dismiss();
                     }
                 })
-//                .setActionContainerOrientation(MUIDialogBuilder.VERTICAL)
                 .show();
     }
 
@@ -84,7 +93,54 @@ public class MUIDialogActivity extends VBaseA {
                         dialog.dismiss();
                     }
                 })
-//                .setActionContainerOrientation(MUIDialogBuilder.VERTICAL)
+                .show();
+    }
+
+
+    private void showEditTextDialog() {
+        new MUIDialog.EditTextDialogBuilder(this)
+                .setTitle("Title")
+                .setDefaultText("Vitar5")
+                .addAction(R.drawable.icon_arrow_left_lined, "CANCEL", MUIDialogAction.ACTION_PROP_NEGATIVE, new MUIDialogAction.OnActionListener() {
+                    @Override
+                    public void onClick(MUIDialog dialog, int index) {
+                        dialog.dismiss();
+                    }
+                })
+                .addAction(R.drawable.icon_arrow_left_lined, "OK", MUIDialogAction.ACTION_PROP_POSITIVE, new MUIDialogAction.OnActionListener() {
+                    @Override
+                    public void onClick(MUIDialog dialog, int index) {
+                        Toast.makeText(MUIDialogActivity.this, "点击了确定", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+
+
+    private void showSimpleMenuDialog() {
+        String[] datas = new String[]{"Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Hanzhou", "Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Hanzhou", "Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Hanzhou"};
+        new MUIDialog.SimpleMenuDialogBuilder(this)
+                .setTitle("Title")
+                .addItems(datas, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MUIDialogActivity.this, "select " + datas[i], Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addAction(R.drawable.icon_arrow_left_lined, "CANCEL", MUIDialogAction.ACTION_PROP_NEGATIVE, new MUIDialogAction.OnActionListener() {
+                    @Override
+                    public void onClick(MUIDialog dialog, int index) {
+                        dialog.dismiss();
+                    }
+                })
+                .addAction(R.drawable.icon_arrow_left_lined, "OK", MUIDialogAction.ACTION_PROP_POSITIVE, new MUIDialogAction.OnActionListener() {
+                    @Override
+                    public void onClick(MUIDialog dialog, int index) {
+                        Toast.makeText(MUIDialogActivity.this, "OK", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                })
                 .show();
     }
 

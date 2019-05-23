@@ -13,8 +13,8 @@
     <attr name="mui_config_color_gray_9" format="color" />
 
     <!--mui drawbale-->
-    <attr name="mui_icon_check_mark" format="reference"/>
-    <attr name="mui_s_checkbox" format="reference"/>
+    <attr name="mui_icon_check_mark" format="reference" />
+    <attr name="mui_s_checkbox" format="reference" />
 
     <!--alpha-->
     <attr name="mui_alpha_pressed" format="float" />
@@ -37,6 +37,8 @@
     <attr name="mui_dialog_message_content_style" format="reference" />
     <attr name="mui_dialog_action_container_style" format="reference" />
     <attr name="mui_dialog_action_view_style" format="reference" />
-
+    <attr name="mui_dialog_edit_content_style" format="reference" />
+    <attr name="mui_dialog_menu_item_style" format="reference" />
+    <attr name="mui_dialog_menu_container_style" format="reference" />
 
 </resources>

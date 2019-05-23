@@ -83,4 +83,37 @@
         <item name="mui_dialog_negative_action_text_color">@color/mui_config_color_red</item>
     </style>
 
+    <style name="MUI.Dialog.EditContentDefStyle" parent="MUI.Dialog.MessageContentDefStyle">
+        <item name="android:textColor">@color/mui_config_color_black</item>
+        <item name="android:textColorHint">@color/mui_config_color_gray_3</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingBottom">31dp</item>
+    </style>
+
+    <style name="MUI.Dialog.MenuItemDefStyle">
+        <item name="android:background">@drawable/mui_s_list_item_bg_with_border_none</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingLeft">?attr/mui_dialog_padding_horizontal</item>
+        <item name="android:paddingRight">?attr/mui_dialog_padding_horizontal</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textColor">@color/mui_config_color_black</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <!--<item name="mui_dialog_menu_item_mark_drawable">@drawable/mui_s_dialog_check_mark</item>-->
+        <!--<item name="mui_dialog_menu_item_check_drawable">@drawable/mui_s_checkbox</item>-->
+        <!--<item name="mui_dialog_menu_item_check_mark_margin_hor">dp_6</item>-->
+    </style>
+
+
+    <style name="MUI.Dialog.MenuContainer">
+        <item name="android:paddingTop">@dimen/dp_8</item>
+        <item name="android:paddingBottom">@dimen/dp_8</item>
+        <item name="mui_dialog_menu_container_single_padding_vertical">@dimen/dp_0</item>
+        <item name="mui_dialog_menu_container_padding_top_when_title_exist">@dimen/dp_14</item>
+        <item name="mui_dialog_menu_container_padding_bottom_when_action_exist">@dimen/dp_27</item>
+        <item name="mui_dialog_menu_item_height">@dimen/dp_48</item>
+    </style>
+
+
 </resources>

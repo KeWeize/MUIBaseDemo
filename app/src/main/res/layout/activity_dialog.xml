@@ -30,6 +30,22 @@
                 android:text="CheckBoxMessageDialog"
                 android:layout_margin="@dimen/dp_10" />
 
+            <vit.com.mui.alpha.MUIAlphaTextView
+                android:id="@+id/tv_edittext_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_12"
+                android:text="EditTextDialog"
+                android:layout_margin="@dimen/dp_10" />
+
+            <vit.com.mui.alpha.MUIAlphaTextView
+                android:id="@+id/tv_simple_menu_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_12"
+                android:text="SimpleMenuDialog"
+                android:layout_margin="@dimen/dp_10" />
+
         </LinearLayout>
 
 

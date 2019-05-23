@@ -27,6 +27,7 @@
     <color name="mui_config_color_separator">#DEE0E2</color>
     <color name="mui_config_color_separator_darken">#D4D6D8</color>
     <color name="mui_config_color_black">#212832</color>
+    <color name="mui_config_color_link">#547FB0</color>
 
     <color name="mui_config_color_gray_1">#353C46</color>
     <color name="mui_config_color_gray_2">#49505A</color>

@@ -96,4 +96,13 @@
         <attr name="mui_dialog_negative_action_text_color" format="color|reference" />
     </declare-styleable>
 
+    <declare-styleable name="MUIDialogMenuContainer">
+        <attr name="android:paddingTop"/>
+        <attr name="android:paddingBottom"/>
+        <attr name="mui_dialog_menu_container_single_padding_vertical" format="dimension"/>
+        <attr name="mui_dialog_menu_container_padding_top_when_title_exist" format="dimension"/>
+        <attr name="mui_dialog_menu_container_padding_bottom_when_action_exist" format="dimension"/>
+        <attr name="mui_dialog_menu_item_height" format="dimension"/>
+    </declare-styleable>
+
 </resources>
