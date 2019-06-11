@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.text.TextUtils;
 import android.util.TypedValue;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import vit.com.mui.R;
@@ -63,7 +65,6 @@ public class MUIDialogMenuItemView extends MUIRelativeLayout {
     }
 
     protected void notifyCheckChange(boolean isChecked) {
-
     }
 
     public boolean isChecked() {
@@ -129,6 +130,136 @@ public class MUIDialogMenuItemView extends MUIRelativeLayout {
             mTextView.setTextColor(color);
         }
 
+    }
+
+    /**
+     * Mark Item View
+     */
+    public static class MarkItemView extends MUIDialogMenuItemView {
+
+        private Context mContext;
+        private TextView mTextView;
+        private ImageView mCheckedView;
+
+        public MarkItemView(Context context) {
+            super(context);
+            mContext = context;
+            mCheckedView = new ImageView(mContext);
+            mCheckedView.setId(MUIViewHelper.generateViewId());
+
+            TypedArray ta = context.obtainStyledAttributes(null, R.styleable.MUIDialogMenuMarkCheckContainer,
+                    R.attr.mui_dialog_menu_item_style, 0);
+            int markMarginHor = 0;
+            int count = ta.getIndexCount();
+            for (int i = 0; i < count; i++) {
+                int attr = ta.getIndex(i);
+                if (attr == R.styleable.MUIDialogMenuMarkCheckContainer_mui_dialog_menu_item_check_mark_margin_hor) {
+                    markMarginHor = ta.getDimensionPixelSize(attr, 0);
+                } else if (attr == R.styleable.MUIDialogMenuMarkCheckContainer_mui_dialog_menu_item_mark_drawable) {
+                    mCheckedView.setImageDrawable(MUIAttrsHelper.getAttrDrawable(context, ta, attr));
+                }
+            }
+            ta.recycle();
+
+            LayoutParams rlp = new LayoutParams(LayoutParams.WRAP_CONTENT,
+                    LayoutParams.WRAP_CONTENT);
+            rlp.addRule(CENTER_VERTICAL, TRUE);
+            rlp.addRule(ALIGN_PARENT_RIGHT, TRUE);
+            rlp.leftMargin = markMarginHor;
+            addView(mCheckedView, rlp);
+
+            mTextView = createItemTextView(mContext);
+            LayoutParams tvLp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+            tvLp.addRule(ALIGN_PARENT_LEFT, TRUE);
+            tvLp.addRule(LEFT_OF, mCheckedView.getId());
+            addView(mTextView, tvLp);
+        }
+
+        public MarkItemView(Context context, CharSequence text) {
+            this(context);
+            setText(text);
+        }
+
+        public void setText(CharSequence text) {
+            mTextView.setText(text);
+        }
+
+        @Override
+        protected void notifyCheckChange(boolean isChecked) {
+            MUIViewHelper.safeSetImageViewSelected(mCheckedView, isChecked);
+        }
+    }
+
+    /**
+     * Check Item View
+     */
+    public static class CheckItemView extends MUIDialogMenuItemView {
+
+        private Context mContext;
+        private TextView mTextView;
+        private ImageView mCheckedView;
+
+        public CheckItemView(Context context, boolean right) {
+            super(context);
+            mContext = context;
+            mCheckedView = new ImageView(mContext);
+            mCheckedView.setId(MUIViewHelper.generateViewId());
+
+            TypedArray a = context.obtainStyledAttributes(null, R.styleable.MUIDialogMenuMarkCheckContainer,
+                    R.attr.mui_dialog_menu_item_style, 0);
+            int markMarginHor = 0;
+            int count = a.getIndexCount();
+            for (int i = 0; i < count; i++) {
+                int attr = a.getIndex(i);
+                if (attr == R.styleable.MUIDialogMenuMarkCheckContainer_mui_dialog_menu_item_check_mark_margin_hor) {
+                    markMarginHor = a.getDimensionPixelSize(attr, 0);
+                } else if (attr == R.styleable.MUIDialogMenuMarkCheckContainer_mui_dialog_menu_item_check_drawable) {
+                    mCheckedView.setImageDrawable(MUIAttrsHelper.getAttrDrawable(context, a, attr));
+                }
+            }
+            a.recycle();
+
+
+            LayoutParams rlp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            rlp.addRule(CENTER_VERTICAL, TRUE);
+            if (right) {
+                rlp.addRule(ALIGN_PARENT_RIGHT, TRUE);
+                rlp.leftMargin = markMarginHor;
+            } else {
+                rlp.addRule(ALIGN_PARENT_LEFT, TRUE);
+                rlp.rightMargin = markMarginHor;
+            }
+
+            addView(mCheckedView, rlp);
+
+            mTextView = createItemTextView(mContext);
+            LayoutParams tvLp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+            if (right) {
+                tvLp.addRule(LEFT_OF, mCheckedView.getId());
+            } else {
+                tvLp.addRule(RIGHT_OF, mCheckedView.getId());
+            }
+
+            addView(mTextView, tvLp);
+        }
+
+        public CheckItemView(Context context, boolean right, CharSequence text) {
+            this(context, right);
+            setText(text);
+        }
+
+        public void setText(CharSequence text) {
+            mTextView.setText(text);
+        }
+
+        public CharSequence getText() {
+            return mTextView.getText();
+        }
+
+        @Override
+        protected void notifyCheckChange(boolean isChecked) {
+            MUIViewHelper.safeSetImageViewSelected(mCheckedView, isChecked);
+        }
     }
 
 }

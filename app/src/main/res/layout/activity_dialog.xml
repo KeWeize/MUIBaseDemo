@@ -46,6 +46,22 @@
                 android:text="SimpleMenuDialog"
                 android:layout_margin="@dimen/dp_10" />
 
+            <vit.com.mui.alpha.MUIAlphaTextView
+                android:id="@+id/tv_checkable_menu_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_12"
+                android:text="CheckableMenuDialog"
+                android:layout_margin="@dimen/dp_10" />
+
+            <vit.com.mui.alpha.MUIAlphaTextView
+                android:id="@+id/tv_multi_check_menu_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_12"
+                android:text="MultiCheckMenuDialog"
+                android:layout_margin="@dimen/dp_10" />
+
         </LinearLayout>
 
 

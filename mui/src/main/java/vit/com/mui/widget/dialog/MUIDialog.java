@@ -7,12 +7,14 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.InputType;
 import android.text.method.TransformationMethod;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -603,6 +605,237 @@ public class MUIDialog extends Dialog {
                 }
             }, listener);
             return this;
+        }
+    }
+
+
+    /**
+     * 单选类型的对话框 Builder
+     */
+    public static class CheckableDialogBuilder extends MenuBaseDialogBuilder<CheckableDialogBuilder> {
+
+        /**
+         * 当前被选中的菜单项的下标, 负数表示没选中任何项
+         */
+        private int mCheckedIndex = -1;
+
+        public CheckableDialogBuilder(Context context) {
+            super(context);
+        }
+
+        /**
+         * 获取当前选中的菜单项的下标
+         *
+         * @return 负数表示没选中任何项
+         */
+        public int getCheckedIndex() {
+            return mCheckedIndex;
+        }
+
+        /**
+         * 设置选中的菜单项的下班
+         */
+        public CheckableDialogBuilder setCheckedIndex(int checkedIndex) {
+            mCheckedIndex = checkedIndex;
+            return this;
+        }
+
+        @Override
+        protected void onCreateContent(MUIDialog dialog, ViewGroup parent, Context context) {
+            super.onCreateContent(dialog, parent, context);
+            if (mCheckedIndex > -1 && mCheckedIndex < mMenuItemViews.size()) {
+                mMenuItemViews.get(mCheckedIndex).setChecked(true);
+            }
+        }
+
+        @Override
+        protected void onItemClick(int index) {
+            for (int i = 0; i < mMenuItemViews.size(); i++) {
+                MUIDialogMenuItemView itemView = mMenuItemViews.get(i);
+                if (i == index) {
+                    itemView.setChecked(true);
+                    mCheckedIndex = index;
+                } else {
+                    itemView.setChecked(false);
+                }
+            }
+        }
+
+        /**
+         * 添加菜单项
+         *
+         * @param items    所有菜单项的文字
+         * @param listener 菜单项的点击事件,可以在点击事件里调用 {@link #setCheckedIndex(int)} 来设置选中某些菜单项
+         */
+        public CheckableDialogBuilder addItems(CharSequence[] items, OnClickListener listener) {
+            for (final CharSequence item : items) {
+                addItem(new ItemViewFactory() {
+                    @Override
+                    public MUIDialogMenuItemView createItemView(Context context) {
+                        return new MUIDialogMenuItemView.MarkItemView(context, item);
+                    }
+                }, listener);
+            }
+            return this;
+        }
+    }
+
+
+    /**
+     * 多选类型的对话框 Builder
+     */
+    public static class MultiCheckableDialogBuilder extends MenuBaseDialogBuilder<MultiCheckableDialogBuilder> {
+
+        /**
+         * 该 int 的每一位标识菜单的每一项是否被选中 (1为选中,0位不选中)
+         */
+        private int mCheckedItems;
+
+        public MultiCheckableDialogBuilder(Context context) {
+            super(context);
+        }
+
+        /**
+         * 设置被选中的菜单项的下标
+         *
+         * @param checkedItems <b>注意: 该 int 参数的每一位标识菜单项的每一项是否被选中</b>
+         *                     <p>如 20 表示选中下标为 1、3 的菜单项, 因为 (2<<1) + (2<<3) = 20</p>
+         */
+        public MultiCheckableDialogBuilder setCheckedItems(int checkedItems) {
+            mCheckedItems = checkedItems;
+            return this;
+        }
+
+        /**
+         * 设置被选中的菜单项的下标
+         *
+         * @param checkedIndexes 被选中的菜单项的下标组成的数组,如 [1,3] 表示选中下标为 1、3 的菜单项
+         */
+        public MultiCheckableDialogBuilder setCheckedItems(int[] checkedIndexes) {
+            int checkedItemRecord = 0;
+            if (checkedIndexes != null && checkedIndexes.length > 0) {
+                for (int checkedIndexe : checkedIndexes) {
+                    checkedItemRecord += 2 << (checkedIndexe);
+                }
+            }
+            return setCheckedItems(checkedItemRecord);
+        }
+
+        /**
+         * 添加菜单项
+         *
+         * @param items    所有菜单项的文字
+         * @param listener 菜单项的点击事件,可以在点击事件里调用 {@link #setCheckedItems(int[])}} 来设置选中某些菜单项
+         */
+        public MultiCheckableDialogBuilder addItems(CharSequence[] items, OnClickListener listener) {
+            for (final CharSequence item : items) {
+                addItem(new ItemViewFactory() {
+                    @Override
+                    public MUIDialogMenuItemView createItemView(Context context) {
+                        return new MUIDialogMenuItemView.CheckItemView(context, true, item);
+                    }
+                }, listener);
+            }
+            return this;
+        }
+
+        @Override
+        public MultiCheckableDialogBuilder addItem(MUIDialogMenuItemView itemView, OnClickListener listener) {
+            if(mMenuItemViewsFactoryList.size() >= 32){
+                throw new RuntimeException("there are more than 32 items, please use LiseView to improve performance!!");
+            }
+            return super.addItem(itemView, listener);
+        }
+
+        @Override
+        public MultiCheckableDialogBuilder addItem(ItemViewFactory itemViewFactory, OnClickListener listener) {
+            if(mMenuItemViewsFactoryList.size() >= 32){
+                throw new RuntimeException("there are more than 32 items, please use LiseView to improve performance!!");
+            }
+            return super.addItem(itemViewFactory, listener);
+        }
+
+        @Override
+        protected void onCreateContent(MUIDialog dialog, ViewGroup parent, Context context) {
+            super.onCreateContent(dialog, parent, context);
+            for (int i = 0; i < mMenuItemViews.size(); i++) {
+                MUIDialogMenuItemView itemView = mMenuItemViews.get(i);
+                int v = 2 << i;
+                itemView.setChecked((v & mCheckedItems) == v);
+            }
+        }
+
+        @Override
+        protected void onItemClick(int index) {
+            MUIDialogMenuItemView itemView = mMenuItemViews.get(index);
+            itemView.setChecked(!itemView.isChecked());
+        }
+
+        /**
+         * @return 被选中的菜单项的下标 <b>注意: 如果选中的是1，3项(以0开始)，因为 (2<<1) + (2<<3) = 20</b>
+         */
+        public int getCheckedItemRecord() {
+            int output = 0;
+            int length = mMenuItemViews.size();
+
+            for (int i = 0; i < length; i++) {
+                MUIDialogMenuItemView itemView = mMenuItemViews.get(i);
+                if (itemView.isChecked()) {
+                    output += 2 << itemView.getMenuIndex();
+                }
+            }
+            mCheckedItems = output;
+            return output;
+        }
+
+        /**
+         * @return 被选中的菜单项的下标数组。如果选中的是1，3项(以0开始)，则返回[1,3]
+         */
+        public int[] getCheckedItemIndexes() {
+            ArrayList<Integer> array = new ArrayList<>();
+            int length = mMenuItemViews.size();
+
+            for (int i = 0; i < length; i++) {
+                MUIDialogMenuItemView itemView = mMenuItemViews.get(i);
+                if (itemView.isChecked()) {
+                    array.add(itemView.getMenuIndex());
+                }
+            }
+            int[] output = new int[array.size()];
+            for (int i = 0; i < array.size(); i++) {
+                output[i] = array.get(i);
+            }
+            return output;
+        }
+
+        protected boolean existCheckedItem() {
+            return getCheckedItemRecord() <= 0;
+        }
+    }
+
+
+    /**
+     * 自定义对话框内容区域的 Builder
+     */
+    public static class CustomDialogBuilder extends MUIDialogBuilder {
+
+        private int mLayoutId;
+
+        public CustomDialogBuilder(Context context) {
+            super(context);
+        }
+
+        /**
+         * 设置内容区域的 layoutResId
+         */
+        public CustomDialogBuilder setLayout(@LayoutRes int layoutResId) {
+            mLayoutId = layoutResId;
+            return this;
+        }
+
+        @Override
+        protected void onCreateContent(MUIDialog dialog, ViewGroup parent, Context context) {
+            parent.addView(LayoutInflater.from(context).inflate(mLayoutId, parent, false));
         }
     }
 
